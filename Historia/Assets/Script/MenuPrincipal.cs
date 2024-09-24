@@ -37,5 +37,6 @@ public class MenuPrincipal : MonoBehaviour
     public void Sair()
     {
         Application.Quit();
+        print("saiu do jogo");
     }
 }
