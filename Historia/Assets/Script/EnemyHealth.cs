@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerHealth : MonoBehaviour
+public class EnemyHealth : MonoBehaviour
 {
-    public float maxHealth = 100f;
+    public float maxHealth = 50f;
     private float currentHealth;
 
     void Start()
@@ -15,7 +15,7 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;
-        Debug.Log("Player tomou " + damage + " de dano.");
+        Debug.Log("Inimigo tomou " + damage + " de dano.");
 
         if (currentHealth <= 0)
         {
@@ -25,9 +25,8 @@ public class PlayerHealth : MonoBehaviour
 
     void Die()
     {
-      
-        Debug.Log("Player morreu.");
        
+        Debug.Log("Inimigo morreu.");
         Destroy(gameObject);
     }
 }
