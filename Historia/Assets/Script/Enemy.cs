@@ -25,7 +25,7 @@ public class Enemy : MonoBehaviour
             rb.velocity = new Vector2(direction.x * speed, rb.velocity.y);
         }
 
-      
+       
         if (Vector2.Distance(transform.position, player.position) < 2f)
         {
             Attack();
@@ -34,7 +34,7 @@ public class Enemy : MonoBehaviour
 
     void Attack()
     {
-      
-        sword.GetComponent<Sword>().Swing();
+       
+        sword.GetComponent<Sword>().Swing(gameObject); 
     }
 }

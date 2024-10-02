@@ -11,7 +11,6 @@ public class Player : MonoBehaviour
     public GameObject shield;
     private Rigidbody2D rb;
     private bool isGrounded = true;
-    private bool isDefending = false;
 
     void Start()
     {
@@ -24,19 +23,19 @@ public class Player : MonoBehaviour
         float move = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(move * speed, rb.velocity.y);
 
-       //Pular
+        // Pular
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
 
-       //Ataque
+        // Atacar 
         if (Input.GetMouseButtonDown(0))
         {
             Attack();
         }
 
-        //  escudo
+        // Defender
         if (Input.GetMouseButtonDown(1))
         {
             Defend(true);
@@ -50,14 +49,13 @@ public class Player : MonoBehaviour
 
     void Attack()
     {
-        
-        sword.GetComponent<Sword>().Swing();
+       
+        sword.GetComponent<Sword>().Swing(gameObject); 
     }
 
     void Defend(bool defend)
     {
-        isDefending = defend;
-        shield.SetActive(defend); 
+        shield.SetActive(defend);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
