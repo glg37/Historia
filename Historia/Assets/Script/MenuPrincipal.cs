@@ -7,7 +7,7 @@ public class MenuPrincipal : MonoBehaviour
     [SerializeField] private string NomeDaFase;
     [SerializeField] private GameObject painelOpçao;
     [SerializeField] private GameObject painelMenuPrincipal;
-
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +22,7 @@ public class MenuPrincipal : MonoBehaviour
     public void Jogar()
     {
         SceneManager.LoadScene(NomeDaFase);
+       
     }
     public void AbrirOpçao()
     {

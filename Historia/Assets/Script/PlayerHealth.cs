@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour
@@ -9,6 +10,7 @@ public class PlayerHealth : MonoBehaviour
     public Slider healthBar;
     public Vector3 healthBarOffset = new Vector3(0, 2, 0); 
     public Camera mainCamera;
+  
 
     void Start()
     {
@@ -43,6 +45,7 @@ public class PlayerHealth : MonoBehaviour
             Die();
         }
     }
+   
 
     void Die()
     {

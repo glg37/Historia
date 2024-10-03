@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     public GameObject sword;
     private Rigidbody2D rb;
     private Transform player;
+    private bool canMove = true;
 
     void Start()
     {
@@ -18,23 +19,29 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-       
-        if (player != null)
+        if (canMove && player != null)
         {
             Vector2 direction = (player.position - transform.position).normalized;
             rb.velocity = new Vector2(direction.x * speed, rb.velocity.y);
         }
+        else
+        {
+            rb.velocity = Vector2.zero;
+        }
 
-       
-        if (Vector2.Distance(transform.position, player.position) < 2f)
+        if (Vector2.Distance(transform.position, player.position) < 2f && canMove)
         {
             Attack();
         }
     }
 
+    public void SetCanMove(bool value)
+    {
+        canMove = value;
+    }
+
     void Attack()
     {
-       
-        sword.GetComponent<Sword>().Swing(gameObject); 
+        sword.GetComponent<Sword>().Swing(gameObject);
     }
 }

@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     public GameObject shield;
     private Rigidbody2D rb;
     private bool isGrounded = true;
+    private bool canMove = true;
 
     void Start()
     {
@@ -19,38 +20,49 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        // Movimento
-        float move = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector2(move * speed, rb.velocity.y);
-
-        // Pular
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (canMove)
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-        }
+            // Movimento
+            float move = Input.GetAxis("Horizontal");
+            rb.velocity = new Vector2(move * speed, rb.velocity.y);
 
-        // Atacar 
-        if (Input.GetMouseButtonDown(0))
-        {
-            Attack();
-        }
+            // Pular
+            if (Input.GetButtonDown("Jump") && isGrounded)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            }
 
-        // Defender
-        if (Input.GetMouseButtonDown(1))
-        {
-            Defend(true);
-        }
+            // Atacar 
+            if (Input.GetMouseButtonDown(0))
+            {
+                Attack();
+            }
 
-        if (Input.GetMouseButtonUp(1))
-        {
-            Defend(false);
+            // Defender
+            if (Input.GetMouseButtonDown(1))
+            {
+                Defend(true);
+            }
+
+            if (Input.GetMouseButtonUp(1))
+            {
+                Defend(false);
+            }
         }
+        else
+        {
+            rb.velocity = new Vector2(0, rb.velocity.y);
+        }
+    }
+
+    public void SetCanMove(bool value)
+    {
+        canMove = value;
     }
 
     void Attack()
     {
-       
-        sword.GetComponent<Sword>().Swing(gameObject); 
+        sword.GetComponent<Sword>().Swing(gameObject);
     }
 
     void Defend(bool defend)
