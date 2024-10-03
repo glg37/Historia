@@ -5,13 +5,17 @@ using UnityEngine.UI;
 
 public class Dialogo : MonoBehaviour
 {
+    [Header("Desativa no dialogo")]
     public GameObject dialoguePanel; 
     public Text dialogueText;
     public GameObject dialogo;
-    public Button exitButton; 
+    
     private bool isDialogueActive = false;
     private Player player;
     private Enemy enemy;
+
+    [Header("BotaoSair")]
+    public Button exitButton;
 
     void Start()
     {

@@ -5,11 +5,15 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class Player : MonoBehaviour
 {
+    [Header("Mecanicas basica Player")]
     public float speed = 5f;
     public float jumpForce = 5f;
     public GameObject sword;
     public GameObject shield;
     private Rigidbody2D rb;
+
+
+
     private bool isGrounded = true;
     private bool canMove = true;
 

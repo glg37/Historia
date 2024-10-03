@@ -5,10 +5,15 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class Enemy : MonoBehaviour
 {
+    [Header("Mecanicas Enemy")]
+
     public float speed = 3f;
     public GameObject sword;
-    private Rigidbody2D rb;
     private Transform player;
+
+
+    private Rigidbody2D rb;
+    
     private bool canMove = true;
 
     void Start()
