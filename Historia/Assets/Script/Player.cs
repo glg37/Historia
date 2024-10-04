@@ -5,7 +5,7 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class Player : MonoBehaviour
 {
-    [Header("Mecanicas basica Player")]
+    [Header("Mecanicas  Player")]
     public float speed = 5f;
     public float jumpForce = 5f;
     public GameObject sword;
@@ -28,8 +28,9 @@ public class Player : MonoBehaviour
         {
             // Movimento
             float move = Input.GetAxis("Horizontal");
+           
             rb.velocity = new Vector2(move * speed, rb.velocity.y);
-
+         
             // Pular
             if (Input.GetButtonDown("Jump") && isGrounded)
             {

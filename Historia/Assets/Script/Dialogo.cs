@@ -9,8 +9,9 @@ public class Dialogo : MonoBehaviour
     public GameObject dialoguePanel; 
     public Text dialogueText;
     public GameObject dialogo;
-    
-    private bool isDialogueActive = false;
+    public GameObject PlaterUi;
+    public GameObject EnemyrUi;
+   private bool isDialogueActive = false;
     private Player player;
     private Enemy enemy;
     public GameObject pl;
@@ -28,6 +29,9 @@ public class Dialogo : MonoBehaviour
 
     void StartDialogue()
     {
+        PlaterUi.SetActive(false);
+        EnemyrUi.SetActive(false);
+
         isDialogueActive = true;
         dialoguePanel.SetActive(true);
         pl.SetActive(true);
@@ -35,7 +39,7 @@ public class Dialogo : MonoBehaviour
         player.SetCanMove(false); 
         enemy.SetCanMove(false);
        
-        dialogueText.text = "Vamos lá, soldados! O Luís nos chamou de novo pra alcançarmos o Egito. Então, vamos matar esses muçulmanos e dominar alguns territórios do Egito!";
+        dialogueText.text = "Vamos lá, soldados! O Luís IX nos chamou de novo pra alcançarmos o Egito. Então, vamos matar esses muçulmanos e dominar alguns territórios do Egito!";
         exitButton.gameObject.SetActive(true);
         Invoke("EndDialogue", 100f); 
     }
@@ -48,6 +52,8 @@ public class Dialogo : MonoBehaviour
 
     void EndDialogue()
     {
+        EnemyrUi.SetActive(true);
+        PlaterUi.SetActive(true);
         dialogo.SetActive(false);
         pl.SetActive(false);
         isDialogueActive = false;
