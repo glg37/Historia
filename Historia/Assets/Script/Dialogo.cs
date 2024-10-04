@@ -13,6 +13,7 @@ public class Dialogo : MonoBehaviour
     private bool isDialogueActive = false;
     private Player player;
     private Enemy enemy;
+    public GameObject pl;
 
     [Header("BotaoSair")]
     public Button exitButton;
@@ -29,9 +30,11 @@ public class Dialogo : MonoBehaviour
     {
         isDialogueActive = true;
         dialoguePanel.SetActive(true);
+        pl.SetActive(true);
         dialogo.SetActive(true);
         player.SetCanMove(false); 
-        enemy.SetCanMove(false); 
+        enemy.SetCanMove(false);
+       
         dialogueText.text = "Vamos lá, soldados! O Luís nos chamou de novo pra alcançarmos o Egito. Então, vamos matar esses muçulmanos e dominar alguns territórios do Egito!";
         exitButton.gameObject.SetActive(true);
         Invoke("EndDialogue", 100f); 
@@ -46,6 +49,7 @@ public class Dialogo : MonoBehaviour
     void EndDialogue()
     {
         dialogo.SetActive(false);
+        pl.SetActive(false);
         isDialogueActive = false;
         dialoguePanel.SetActive(false); 
         player.SetCanMove(true); 
