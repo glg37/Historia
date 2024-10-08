@@ -22,6 +22,7 @@ public class MenuPrincipal : MonoBehaviour
     public void Jogar()
     {
         SceneManager.LoadScene(NomeDaFase);
+        Time.timeScale = 1f;
        
     }
     public void AbrirOpçao()

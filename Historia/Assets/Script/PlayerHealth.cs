@@ -7,16 +7,15 @@ public class PlayerHealth : MonoBehaviour
 {
     public float maxHealth = 100f;
     private float currentHealth;
-    public Slider healthBar;
-    public Vector3 healthBarOffset = new Vector3(0, 2, 0); 
+    public Image healthBar; 
+    public Vector3 healthBarOffset = new Vector3(0, 2, 0);
     public Camera mainCamera;
-  
 
+    public GameObject espada;
     void Start()
     {
         currentHealth = maxHealth;
-        healthBar.maxValue = maxHealth;
-        healthBar.value = currentHealth;
+        healthBar.fillAmount = currentHealth / maxHealth;
 
         if (mainCamera == null)
         {
@@ -26,11 +25,11 @@ public class PlayerHealth : MonoBehaviour
 
     void Update()
     {
+
        
         Vector3 worldPosition = transform.position + healthBarOffset;
         Vector3 screenPosition = mainCamera.WorldToScreenPoint(worldPosition);
-
-        healthBar.transform.position = screenPosition;
+        //healthBar.transform.position = screenPosition;
     }
 
     public void TakeDamage(float damage)
@@ -38,18 +37,19 @@ public class PlayerHealth : MonoBehaviour
         currentHealth -= damage;
         Debug.Log("Player tomou " + damage + " de dano.");
 
-        healthBar.value = currentHealth;
+        
+        healthBar.fillAmount = currentHealth / maxHealth;
 
         if (currentHealth <= 0)
         {
             Die();
         }
     }
-   
 
     void Die()
     {
-        Debug.Log("Player morreu.");
+        
         Destroy(gameObject);
+        espada.SetActive(false);
     }
 }

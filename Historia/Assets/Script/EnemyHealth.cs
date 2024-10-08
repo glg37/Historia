@@ -6,16 +6,14 @@ public class EnemyHealth : MonoBehaviour
 {
     public float maxHealth = 100f;
     private float currentHealth;
-    public Slider healthBar;
+    public Image healthBar;
     public Vector3 healthBarOffset = new Vector3(0, 2, 0);
     public Camera mainCamera;
-
 
     void Start()
     {
         currentHealth = maxHealth;
-        healthBar.maxValue = maxHealth;
-        healthBar.value = currentHealth;
+        healthBar.fillAmount = 1f;
 
         if (mainCamera == null)
         {
@@ -28,7 +26,6 @@ public class EnemyHealth : MonoBehaviour
 
         Vector3 worldPosition = transform.position + healthBarOffset;
         Vector3 screenPosition = mainCamera.WorldToScreenPoint(worldPosition);
-
         healthBar.transform.position = screenPosition;
     }
 
@@ -37,7 +34,8 @@ public class EnemyHealth : MonoBehaviour
         currentHealth -= damage;
         Debug.Log("Inimigo tomou " + damage + " de dano.");
 
-        healthBar.value = currentHealth;
+
+        healthBar.fillAmount = currentHealth / maxHealth;
 
         if (currentHealth <= 0)
         {
@@ -45,10 +43,8 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-
     void Die()
     {
-        Debug.Log(" morreu.");
         Destroy(gameObject);
     }
 }
