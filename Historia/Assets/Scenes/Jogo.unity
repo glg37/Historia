@@ -623,7 +623,6 @@ MonoBehaviour:
   dialoguePanel: {fileID: 550855539}
   dialogueText: {fileID: 1167145570}
   dialogo: {fileID: 1167145568}
-  PlaterUi: {fileID: 1717623640}
   pl: {fileID: 1486500273}
   exitButton: {fileID: 1025908637}
 --- !u!4 &389567767
@@ -808,7 +807,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0c657d82e2d29e4287d3f92e3766519, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 20
+  attackDamage: 13
   attackRange: 0.5
   enemyLayer:
     serializedVersion: 2
@@ -874,8 +873,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 505527456}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.6500001, y: 0.15350866, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.267, y: -0.137, z: 0}
+  m_LocalScale: {x: 0.4841, y: 0.3672, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 869576014}
@@ -1208,7 +1207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0c657d82e2d29e4287d3f92e3766519, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 10
+  attackDamage: 13
   attackRange: 0.5
   enemyLayer:
     serializedVersion: 2
@@ -1274,8 +1273,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 684463211}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.878, y: 0.336, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.2856, y: -0.021, z: 0}
+  m_LocalScale: {x: 0.5323, y: 0.419, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1384709316}
@@ -1409,18 +1408,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.05111281, y: -0.13797069}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.84, y: 0.84}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.48887318, y: 0.57244253}
   m_EdgeRadius: 0
 --- !u!50 &869576012
 Rigidbody2D:
@@ -1484,7 +1483,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bf7a4aaebfd0a19449e9e2e697207612, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1503,8 +1502,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 869576009}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.65, y: -3.35, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 3.3292, y: -2.55, z: 0}
+  m_LocalScale: {x: 2.6172, y: 3.1511, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 505527459}
@@ -2590,7 +2589,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c22dd0ceaebcf594d89ccbdb58d735fd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2609,8 +2608,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1384709313}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.18, y: -3.35, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -6.93, y: -2.59, z: 0}
+  m_LocalScale: {x: 2.7855132, y: 3.11643, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1608326355}
@@ -2652,18 +2651,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.017151758, y: -0.13797247}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.84, y: 0.84}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.42370918, y: 0.52169514}
   m_EdgeRadius: 0
 --- !u!114 &1384709320
 MonoBehaviour:
