@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Controlarsom : MonoBehaviour
 {
     private bool estadoSom = true;
-    private AudioSource fundoMusical;
+    [SerializeField] private AudioSource fundoMusical;
 
     [SerializeField] private Sprite somLigadoSprite;
     [SerializeField] private Sprite somDesligadoSprite;
