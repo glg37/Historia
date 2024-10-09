@@ -8,10 +8,11 @@ public class Player : MonoBehaviour
     [Header("Mecanicas  Player")]
     public float speed = 5f;
     public float jumpForce = 5f;
+    
     public GameObject sword;
     public GameObject shield;
     private Rigidbody2D rb;
-
+    
 
 
     private bool isGrounded = true;
@@ -20,6 +21,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+       
     }
 
     void Update()
@@ -81,6 +83,8 @@ public class Player : MonoBehaviour
         {
             isGrounded = true;
         }
+      
+      
     }
 
     private void OnCollisionExit2D(Collision2D collision)

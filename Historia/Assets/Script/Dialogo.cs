@@ -9,8 +9,7 @@ public class Dialogo : MonoBehaviour
     public GameObject dialoguePanel; 
     public Text dialogueText;
     public GameObject dialogo;
-    public GameObject PlaterUi;
-   
+    
    private bool isDialogueActive = false;
     private Player player;
     private Enemy enemy;
@@ -29,7 +28,7 @@ public class Dialogo : MonoBehaviour
 
     void StartDialogue()
     {
-        PlaterUi.SetActive(false);
+       
      
 
         isDialogueActive = true;
@@ -53,7 +52,7 @@ public class Dialogo : MonoBehaviour
     void EndDialogue()
     {
        
-        PlaterUi.SetActive(true);
+       
         dialogo.SetActive(false);
         pl.SetActive(false);
         isDialogueActive = false;
