@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
 public class PlayerHealth : MonoBehaviour
 {
     public float maxHealth = 100f;
@@ -50,6 +52,8 @@ public class PlayerHealth : MonoBehaviour
     {
         
         Destroy(gameObject);
+        SceneManager.LoadScene("GameOver");
         espada.SetActive(false);
+
     }
 }
