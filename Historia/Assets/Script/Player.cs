@@ -5,23 +5,23 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class Player : MonoBehaviour
 {
-    [Header("Mecanicas  Player")]
+    [Header("Mecanicas Player")]
     public float speed = 5f;
     public float jumpForce = 5f;
-    
+
     public GameObject sword;
     public GameObject shield;
     private Rigidbody2D rb;
+
+    private Animator ando;
     
-
-
     private bool isGrounded = true;
     private bool canMove = true;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-       
+        ando = GetComponent<Animator>(); 
     }
 
     void Update()
@@ -30,9 +30,12 @@ public class Player : MonoBehaviour
         {
             // Movimento
             float move = Input.GetAxis("Horizontal");
-           
+
             rb.velocity = new Vector2(move * speed, rb.velocity.y);
-         
+
+           
+            ando.SetBool("isWalking", move != 0); 
+
             // Pular
             if (Input.GetButtonDown("Jump") && isGrounded)
             {
@@ -83,8 +86,6 @@ public class Player : MonoBehaviour
         {
             isGrounded = true;
         }
-      
-      
     }
 
     private void OnCollisionExit2D(Collision2D collision)
