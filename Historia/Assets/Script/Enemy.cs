@@ -49,4 +49,14 @@ public class Enemy : MonoBehaviour
     {
         sword.GetComponent<Sword>().Swing(gameObject);
     }
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Parede"))
+        {
+            transform.Rotate(0, 180, 0); 
+            
+            
+
+        }
+    }
 }

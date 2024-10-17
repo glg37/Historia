@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     public GameObject sword;
     public GameObject shield;
     private Rigidbody2D rb;
-    public int attack;
+    
 
     private Animator animator;
     
@@ -46,7 +46,7 @@ public class Player : MonoBehaviour
             // Atacar 
             if (Input.GetMouseButtonDown(0))
             {
-                sword.GetComponent<Sword>().Swing(gameObject);
+                
                 animator.SetBool("Attack", sword != false);
 
             }
@@ -88,6 +88,10 @@ public class Player : MonoBehaviour
         {
             isGrounded = true;
         }
+        if (collision.gameObject.CompareTag("Parede"))
+        {
+            isGrounded = true;
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -96,5 +100,10 @@ public class Player : MonoBehaviour
         {
             isGrounded = false;
         }
+        if (collision.gameObject.CompareTag("Parede"))
+        {
+            isGrounded = true;
+        }
     }
+   
 }

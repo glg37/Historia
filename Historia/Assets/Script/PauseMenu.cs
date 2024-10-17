@@ -13,6 +13,7 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject Continuar;
 
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +31,7 @@ public class PauseMenu : MonoBehaviour
                 Pausado.SetActive(false);
 
                 Continuar.SetActive(false);
+               
                 Time.timeScale = 1;
 
 
@@ -42,6 +44,7 @@ public class PauseMenu : MonoBehaviour
                 Pausado.SetActive(true);
                 OpcoesMenu.gameObject.SetActive(false);
                 Continuar.SetActive(true);
+              
             }
 
 
@@ -55,6 +58,8 @@ public class PauseMenu : MonoBehaviour
             Time.timeScale = 1;
             PausaMenu.gameObject.SetActive(false);
             Pausado.SetActive(false);
+           
+            
 
 
 
@@ -64,6 +69,7 @@ public class PauseMenu : MonoBehaviour
     public void Opções()
     {
         PausaMenu.gameObject.SetActive(false);
+        
         OpcoesMenu.gameObject.SetActive(true);
         Time.timeScale = 0;
 

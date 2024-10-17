@@ -30,7 +30,7 @@ public class Sword: MonoBehaviour
                         enemy.GetComponent<EnemyHealth>().TakeDamage(attackDamage);
                     }
                 }
-            }
+            }       
 
           
             StartCoroutine(AttackCooldown());
