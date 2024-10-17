@@ -12,8 +12,9 @@ public class Player : MonoBehaviour
     public GameObject sword;
     public GameObject shield;
     private Rigidbody2D rb;
+    public int attack;
 
-    private Animator ando;
+    private Animator animator;
     
     private bool isGrounded = true;
     private bool canMove = true;
@@ -21,7 +22,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        ando = GetComponent<Animator>(); 
+        animator = GetComponent<Animator>(); 
     }
 
     void Update()
@@ -34,7 +35,7 @@ public class Player : MonoBehaviour
             rb.velocity = new Vector2(move * speed, rb.velocity.y);
 
            
-            ando.SetBool("isWalking", move != 0); 
+            animator.SetBool("isWalking", move != 0); 
 
             // Pular
             if (Input.GetButtonDown("Jump") && isGrounded)
@@ -45,8 +46,13 @@ public class Player : MonoBehaviour
             // Atacar 
             if (Input.GetMouseButtonDown(0))
             {
-                Attack();
+                sword.GetComponent<Sword>().Swing(gameObject);
+                animator.SetBool("Attack", sword != false);
+
             }
+            else
+
+                animator.SetBool("Attack", sword != true);
 
             // Defender
             if (Input.GetMouseButtonDown(1))
@@ -70,11 +76,7 @@ public class Player : MonoBehaviour
         canMove = value;
     }
 
-    void Attack()
-    {
-        sword.GetComponent<Sword>().Swing(gameObject);
-    }
-
+    
     void Defend(bool defend)
     {
         shield.SetActive(defend);
