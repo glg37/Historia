@@ -257,6 +257,7 @@ MonoBehaviour:
   OpcoesMenu: {fileID: 1251842394}
   Pausado: {fileID: 1080266176}
   Continuar: {fileID: 510653561}
+  Sword: {fileID: 684463211}
 --- !u!4 &57974780
 Transform:
   m_ObjectHideFlags: 0
@@ -1394,7 +1395,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 684463211}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.304, y: -0.016, z: 0}
+  m_LocalPosition: {x: 0.286, y: -0.034, z: 0}
   m_LocalScale: {x: 0.410899, y: 0.32343927, z: 0.27712357}
   m_ConstrainProportionsScale: 0
   m_Children: []
