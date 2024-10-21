@@ -106,5 +106,9 @@ public class Player : MonoBehaviour
             isGrounded = true;
         }
     }
+    public void ColecionavelColetado()
+    {
+        Debug.Log(" o colecionavel ta pego vapo");
+    }
    
 }
