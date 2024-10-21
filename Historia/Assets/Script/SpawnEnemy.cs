@@ -33,7 +33,7 @@ public class SpawnEnemy : MonoBehaviour
     {
         for (int i = 0; i < spawnPoints.Length; i++)
         {
-            for (int j = 0; j < 6; j++)
+            for (int j = 0; j < 1; j++)
             {
                 enemies.Add(Instantiate(enemyPrefab, spawnPoints[i].position, spawnPoints[i].rotation));
                 totalSpawnedEnemies++;
@@ -61,7 +61,7 @@ public class SpawnEnemy : MonoBehaviour
 
     IEnumerator TesTe()
     {
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 1; i++)
         {
 
             yield return new WaitForSeconds(2);

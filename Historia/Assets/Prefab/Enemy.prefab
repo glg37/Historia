@@ -116,7 +116,6 @@ GameObject:
   - component: {fileID: 7229742386824361013}
   - component: {fileID: 7229742386824361010}
   - component: {fileID: 7229742386824361011}
-  - component: {fileID: 7229742386824361001}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -253,17 +252,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   sword: {fileID: 7229742386513257945}
---- !u!114 &7229742386824361001
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7229742386824361008}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c543a09a39bef7047807a37766639a3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  EspadaEnemy: {fileID: 7229742386513257945}

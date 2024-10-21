@@ -46,7 +46,7 @@ public class Player : MonoBehaviour
             // Atacar 
             if (Input.GetMouseButtonDown(0))
             {
-                
+                sword.GetComponent<Sword>().Swing(gameObject);
                 animator.SetBool("Attack", sword != false);
 
             }
@@ -81,6 +81,7 @@ public class Player : MonoBehaviour
     {
         shield.SetActive(defend);
     }
+   
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
