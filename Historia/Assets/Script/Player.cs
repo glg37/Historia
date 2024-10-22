@@ -32,9 +32,27 @@ public class Player : MonoBehaviour
             // Movimento
             float move = Input.GetAxis("Horizontal");
 
-            rb.velocity = new Vector2(move * speed, rb.velocity.y);
+            if (move < 0)
+            {
+                if(transform.localScale.x > 0)
+                {
+                    transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
+                }
+            } else if (move > 0)
+            {
+                if (transform.localScale.x < 0)
+                {
+                    transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
+                }
+            }
 
-           
+            rb.velocity = new Vector2(move * speed, rb.velocity.y);
+          
+          
+
+            
+
+
             animator.SetBool("isWalking", move != 0); 
 
             // Pular

@@ -13,7 +13,7 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject Continuar;
 
-    
+    public GameObject numero;
     
     // Start is called before the first frame update
     void Start()
@@ -30,7 +30,7 @@ public class PauseMenu : MonoBehaviour
             {
                 PausaMenu.gameObject.SetActive(false);
                 Pausado.SetActive(false);
-               
+                numero.SetActive(true);
                 Continuar.SetActive(false);
                
                 Time.timeScale = 1;
@@ -41,7 +41,7 @@ public class PauseMenu : MonoBehaviour
             {
 
                 Time.timeScale = 0;
-                
+                numero.SetActive(false);
                 PausaMenu.gameObject.SetActive(true);
                 Pausado.SetActive(true);
                 OpcoesMenu.gameObject.SetActive(false);
@@ -58,7 +58,7 @@ public class PauseMenu : MonoBehaviour
         if (PausaMenu.gameObject.activeSelf)
         {
             Time.timeScale = 1;
-           
+            numero.SetActive(true);
             PausaMenu.gameObject.SetActive(false);
             Pausado.SetActive(false);
            
