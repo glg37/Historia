@@ -128,5 +128,9 @@ public class Player : MonoBehaviour
     {
         Debug.Log(" o colecionavel ta pego vapo");
     }
+    public void InteragirNpc()
+    {
+        Debug.Log("oi");
+    }
    
 }
