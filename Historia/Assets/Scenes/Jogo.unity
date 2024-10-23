@@ -4674,7 +4674,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 834a348ea0ec64a49b8f068cb0ae2291, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionRange: 2
+  interactionRange: 2.5
   dialogueUI: {fileID: 540750049}
   npcDialogue: "N\xE3o \xE9 por aqui, capit\xE3o. Volte e mate os mu\xE7ulmanos e
     domine os territ\xF3rios deles no Egito."

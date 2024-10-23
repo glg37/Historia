@@ -10,10 +10,12 @@ public class Npc : MonoBehaviour
     public GameObject dialogueUI;
     public string npcDialogue = "Não é por aqui, capitão. Volte e mate os muçulmanos e domine os territórios deles no Egito.";
 
-
+    [Header("PLayer")]
     private Transform player;
-    public Button exitButton;
     private Player player2;
+
+    [Header("Botao Sair")]
+    public Button exitButton;
     void Start()
     {
         player2 = FindObjectOfType<Player>();
