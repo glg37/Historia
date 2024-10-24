@@ -8,16 +8,15 @@ public class Enemy : MonoBehaviour
     [Header("Mecânicas Enemy")]
     public float speed = 3f;
     public GameObject sword;
-    public LayerMask playerLayer;  
+    public LayerMask playerLayer;
     public float visionRange = 5f;
-    public float attackRange = 2f; 
-
+    public float attackRange = 2f;
 
     private Transform player;
     private Rigidbody2D rb;
     private bool canMove = true;
     private bool isPatrolling = true;
-    private bool isFacingRight = true;
+    private bool isFacingRight = false; 
 
     void Start()
     {
@@ -31,7 +30,7 @@ public class Enemy : MonoBehaviour
         {
             if (IsPlayerInSight())
             {
-                
+               
                 canMove = true;
                 isPatrolling = false;
                 MoveTowardsPlayer();
@@ -52,7 +51,7 @@ public class Enemy : MonoBehaviour
 
     bool IsPlayerInSight()
     {
-        
+       
         Vector2 direction = isFacingRight ? Vector2.right : Vector2.left;
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, visionRange, playerLayer);
         return hit.collider != null && hit.collider.CompareTag("Player");
@@ -64,6 +63,12 @@ public class Enemy : MonoBehaviour
         {
             Vector2 direction = (player.position - transform.position).normalized;
             rb.velocity = new Vector2(direction.x * speed, rb.velocity.y);
+
+           
+            if ((direction.x > 0 && !isFacingRight) || (direction.x < 0 && isFacingRight))
+            {
+                Flip();
+            }
         }
     }
 
@@ -71,7 +76,7 @@ public class Enemy : MonoBehaviour
     {
         if (isPatrolling)
         {
-            
+           
             rb.velocity = new Vector2((isFacingRight ? speed : -speed), rb.velocity.y);
         }
     }
@@ -86,12 +91,16 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
            
-            isFacingRight = !isFacingRight;
-            
-            Vector3 localScale = transform.localScale;
-            localScale.x *= -1; 
-            transform.localScale = localScale;
+            Flip();
         }
+    }
+
+    void Flip()
+    {
+        isFacingRight = !isFacingRight;
+        Vector3 localScale = transform.localScale;
+        localScale.x *= -1;
+        transform.localScale = localScale;
     }
 
     public void SetCanMove(bool value)
@@ -101,7 +110,7 @@ public class Enemy : MonoBehaviour
 
     void OnDrawGizmosSelected()
     {
-      
+
         Gizmos.color = Color.red;
         Vector2 direction = isFacingRight ? Vector2.right : Vector2.left;
         Gizmos.DrawLine(transform.position, (Vector2)transform.position + direction * visionRange);
