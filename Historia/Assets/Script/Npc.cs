@@ -9,6 +9,8 @@ public class Npc : MonoBehaviour
     public float interactionRange = 3f;
     public GameObject dialogueUI;
     public string npcDialogue = "Não é por aqui, capitão. Volte e mate os muçulmanos e domine os territórios deles no Egito.";
+    public GameObject dialogo;
+
 
     [Header("Player")]
     private Transform player;
@@ -55,6 +57,7 @@ public class Npc : MonoBehaviour
     void AbrirDialogo()
     {
         dialogueUI.SetActive(true);
+        dialogo.SetActive(true);
         dialogueUI.GetComponentInChildren<UnityEngine.UI.Text>().text = npcDialogue;
         exitButton.gameObject.SetActive(true);
         interactButton.SetActive(false);

@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
 public class Dialogo : MonoBehaviour
 {
     [Header("Desativa no dialogo")]
     public GameObject dialoguePanel; 
-    public Text dialogueText;
+    public TMP_Text dialogueText;
     public GameObject dialogo;
     
    private bool isDialogueActive = false;
