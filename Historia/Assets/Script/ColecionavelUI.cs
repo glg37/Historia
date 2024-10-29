@@ -6,9 +6,8 @@ public class ColecionavelUI : MonoBehaviour
 {
     public GameObject Escudo;
     public Text texto;
-    public int numeroColetaveis;
+    public static int numeroColetaveis;
 
-    // Start is called before the first frame update
     void Start()
     {
         if (texto == null)
@@ -19,13 +18,11 @@ public class ColecionavelUI : MonoBehaviour
         AtualizarTexto();
     }
 
-  
     public void AtualizarTexto()
     {
         texto.text = $"{numeroColetaveis}/3";
     }
 
-    
     public void ColetavelPegado()
     {
         numeroColetaveis++;
