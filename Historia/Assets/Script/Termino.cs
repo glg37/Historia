@@ -9,5 +9,10 @@ public class Termino : MonoBehaviour
         SceneManager.LoadScene("Jogo");
         Time.timeScale = 1;
     }
+    IEnumerator fuego()
+    {
+        yield return new WaitForSeconds(17);
+        SceneManager.LoadScene("Jogo");
+    }
 
 }
