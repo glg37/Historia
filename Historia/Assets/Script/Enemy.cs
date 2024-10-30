@@ -16,12 +16,13 @@ public class Enemy : MonoBehaviour
     private Rigidbody2D rb;
     private bool canMove = true;
     private bool isPatrolling = true;
-    private bool isFacingRight = false; 
-
+    private bool isFacingRight = false;
+    public Animator animator;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -30,14 +31,12 @@ public class Enemy : MonoBehaviour
         {
             if (IsPlayerInSight())
             {
-               
                 canMove = true;
                 isPatrolling = false;
                 MoveTowardsPlayer();
             }
             else
             {
-                
                 isPatrolling = true;
                 Patrol();
             }
@@ -45,6 +44,10 @@ public class Enemy : MonoBehaviour
             if (Vector2.Distance(transform.position, player.position) < attackRange && canMove)
             {
                 Attack();
+            }
+            else
+            {
+                animator.SetBool("Ataque", false);
             }
         }
     }
@@ -83,9 +86,12 @@ public class Enemy : MonoBehaviour
 
     void Attack()
     {
+        
+        animator.SetBool("Ataque", true);
+
+       
         sword.GetComponent<Sword>().Swing(gameObject);
     }
-
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
