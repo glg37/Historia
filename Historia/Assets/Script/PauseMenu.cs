@@ -7,7 +7,7 @@ public class PauseMenu : MonoBehaviour
 {
     public Transform PausaMenu;
 
-    public Transform OpcoesMenu;
+   
 
     public GameObject Pausado;
 
@@ -44,7 +44,7 @@ public class PauseMenu : MonoBehaviour
                 numero.SetActive(false);
                 PausaMenu.gameObject.SetActive(true);
                 Pausado.SetActive(true);
-                OpcoesMenu.gameObject.SetActive(false);
+               
                 Continuar.SetActive(true);
               
             }
@@ -69,18 +69,10 @@ public class PauseMenu : MonoBehaviour
 
         }
     }
-    public void Opções()
-    {
-        PausaMenu.gameObject.SetActive(false);
-       
-        OpcoesMenu.gameObject.SetActive(true);
-        Time.timeScale = 0;
-
-
-    }
+   
     public void FecharOpçao()
     {
-        OpcoesMenu.gameObject.SetActive(false);
+       
         PausaMenu.gameObject.SetActive(true);
         Time.timeScale = 0;
 
