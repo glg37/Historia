@@ -4,24 +4,25 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Termino : MonoBehaviour
 {
-    public void Jogar3()
+     void Start()
     {
         StartCoroutine(fuego());
-        
         Time.timeScale = 1;
+
     }
 
     IEnumerator fuego()
     {
-        yield return new WaitForSeconds(4);
-        
+        yield return new WaitForSeconds(30);
         SceneManager.LoadScene("Jogo");
+
     }
-    public void Jogar6()
+    public void Skip()
     {
         SceneManager.LoadScene("Jogo");
-      Time.timeScale = 1;
+        Time.timeScale = 1;
     }
-   
-    
 }
+
+
+
