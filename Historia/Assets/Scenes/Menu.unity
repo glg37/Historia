@@ -656,7 +656,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7594bdd653109d042b3026653df545ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NomeDaFase: jogo
+  NomeDaFase: Historia
   "painelOp\xE7ao": {fileID: 2044077023}
   painelMenuPrincipal: {fileID: 1166383472}
 --- !u!4 &558978457
