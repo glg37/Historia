@@ -7,18 +7,20 @@ public class Termino : MonoBehaviour
     public void Jogar3()
     {
         StartCoroutine(fuego());
+        
         Time.timeScale = 1;
     }
 
     IEnumerator fuego()
     {
-        yield return new WaitForSeconds(8);
+        yield return new WaitForSeconds(4);
+        
         SceneManager.LoadScene("Jogo");
     }
     public void Jogar6()
     {
         SceneManager.LoadScene("Jogo");
-        Time.timeScale = 1;
+      Time.timeScale = 1;
     }
    
     
